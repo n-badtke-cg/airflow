@@ -2473,12 +2473,14 @@
                         "retentionDays": {
                             "description": "Number of days to retain the logs when running the Airflow log groomer sidecar (deprecated, use ``workers.celery.logGroomerSidecar.retentionDays`` instead). Total retention time is ``retentionDays`` + ``retentionMinutes``.",
                             "type": "integer",
-                            "default": 15
+                            "default": 15,
+                            "minimum": 0
                         },
                         "retentionMinutes": {
                             "description": "Number of minutes to retain the logs when running the Airflow log groomer sidecar (deprecated, use ``workers.celery.logGroomerSidecar.retentionMinutes`` instead). Total retention time is ``retentionDays`` + ``retentionMinutes``.",
                             "type": "integer",
-                            "default": 0
+                            "default": 0,
+                            "minimum": 0
                         },
                         "frequencyMinutes": {
                             "description": "Number of minutes between attempts to groom the Airflow logs in log groomer sidecar (deprecated, use ``workers.celery.logGroomerSidecar.frequencyMinutes`` instead).",
@@ -3697,7 +3699,8 @@
                                         "integer",
                                         "null"
                                     ],
-                                    "default": null
+                                    "default": null,
+                                    "minimum": 0
                                 },
                                 "retentionMinutes": {
                                     "description": "Number of minutes to retain the logs when running the Airflow log groomer sidecar. Total retention time is ``retentionDays`` + ``retentionMinutes``.",
@@ -3705,7 +3708,8 @@
                                         "integer",
                                         "null"
                                     ],
-                                    "default": null
+                                    "default": null,
+                                    "minimum": 0
                                 },
                                 "frequencyMinutes": {
                                     "description": "Number of minutes between attempts to groom the Airflow logs in log groomer sidecar.",
@@ -15255,12 +15259,14 @@
                 "retentionDays": {
                     "description": "Number of days to retain the logs when running the Airflow log groomer sidecar. Total retention time is ``retentionDays`` + ``retentionMinutes``.",
                     "type": "integer",
-                    "default": 15
+                    "default": 15,
+                    "minimum": 0
                 },
                 "retentionMinutes": {
                     "description": "Number of minutes to retain the logs when running the Airflow log groomer sidecar. Total retention time is ``retentionDays`` + ``retentionMinutes``.",
                     "type": "integer",
-                    "default": 0
+                    "default": 0,
+                    "minimum": 0
                 },
                 "frequencyMinutes": {
                     "description": "Number of minutes between attempts to groom the Airflow logs in log groomer sidecar.",
